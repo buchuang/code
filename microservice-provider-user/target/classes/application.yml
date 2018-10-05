@@ -1,0 +1,34 @@
+server:
+  port: 8800
+  
+eureka:
+  client:
+    healthcheck:
+      enable: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true 
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    
+    
+spring:
+  application:
+    name: microservice-provider-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 94450
+    url: jdbc:mysql://localhost:3306/stay
+      
+mybatis:
+  config-location: classpath:mapper/config/mybatis.cfg.xml
+  mapper-locations:
+    - classpath:mapper/*.xml
+  type-aliases-package: com.nyist.microserviceprovideruser.entity
+logging:
+  level:
+    root: INFO
+    org.mybatis: INFO
+    com.nyist: DEBUG
+  
