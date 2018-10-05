@@ -1,5 +1,8 @@
 package com.nyist.microserviceconsumermovie.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +27,19 @@ public class MovieController {
 	@GetMapping("/movie/{id}")
 	public Object findById(@PathVariable String id){
 		return this.restTemplate.getForObject("http://microservice-provider-user/simple/"+id, User.class);
+	}
+	@GetMapping("/getAll")
+	public Object getAll(){
+		//worng
+//		List<User> list=this.restTemplate.getForObject("http://microservice-provider-user/get-all", List.class);
+//		for(User user: list){
+//			System.out.println(user.getId());
+//		}
+		
+		//right
+		User[] users=this.restTemplate.getForObject("http://microservice-provider-user/get-all", User[].class);
+		List<User> list=Arrays.asList(users);
+		return list;
 	}
 	@GetMapping("/test")
 	public Object test(){
