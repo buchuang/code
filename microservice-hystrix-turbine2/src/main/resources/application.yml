@@ -15,4 +15,4 @@ turbine:
   aggregator:
     clusterConfig: MICROSERVICE-CONSUMER-MOVIE-RIBBON-HYSTRIX2
   appConfig: microservice-consumer-movie-ribbon-hystrix2
-turbine.instanceUrlSuffix.MICROSERVICE-CONSUMER-MOVIE-RIBBON-HYSTRIX2: /ribbon/hystrix.stream
+# turbine.instanceUrlSuffix.MICROSERVICE-CONSUMER-MOVIE-RIBBON-HYSTRIX2: /ribbon/hystrix.stream

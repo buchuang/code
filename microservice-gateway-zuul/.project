@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>microservice-consumer-movie-ribbon-hystrix2</name>
+	<name>microservice-gateway-zuul</name>
 	<comment></comment>
 	<projects>
 	</projects>
