@@ -27,6 +27,7 @@
 		<module>microservice-gateway-zuul</module>
 		<module>microservice-zuul-file-upload</module>
 		<module>microservice-gateway-zuul-fallback</module>
+		<module>microservice-gateway-zuul-filter</module>
 	</modules>
 	
 	<parent>
