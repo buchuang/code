@@ -19,11 +19,8 @@ zuul:
     abc: 
       path: /user/**
       service-id: microservice-provider-user
+    def:
+      path: /movie/**
+      service-id: microservice-consumer-movie-ribbon-hystrix
 
-ribbon: 
-  eureka: 
-    enabled: false
-
-microservice-provider-user: 
-  ribbon: 
-    listOfServers: http://localhost:8800/,http://localhost:8801 
+  
