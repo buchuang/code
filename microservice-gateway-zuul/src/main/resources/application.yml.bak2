@@ -1,0 +1,31 @@
+server:
+  port: 8040
+  
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#zuul:
+#  ignored-services: microservice-consumer-movie-ribbon-hystrix
+#  routes:
+#    microservice-provider-user: /user/**  
+zuul:
+  routes:
+    abc: 
+      path: /user/**
+      service-id: microservice-provider-user
+    def:
+      path: /upload/**
+      service-id: microservice-zuul-file-upload
+ribbon: 
+  eureka: 
+    enabled: false
+
+microservice-provider-user: 
+  ribbon: 
+    listOfServers: http://localhost:8800/,http://localhost:8801 
