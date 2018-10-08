@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/buchuang/MicroService-Config-Server 
+  application:
+    name: microservice-config-server-eureka
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme
+  key: foo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

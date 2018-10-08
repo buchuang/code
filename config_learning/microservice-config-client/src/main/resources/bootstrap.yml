@@ -1,0 +1,13 @@
+
+spring:
+  application:
+    name: foobar
+  cloud:
+    config:
+      uri: http://user:password123@localhost:8080
+      profile: production
+      label: master
+      
+
+
+      
